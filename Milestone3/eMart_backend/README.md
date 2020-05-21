@@ -1,2 +1,0 @@
-# stockmarket
-Initial project
