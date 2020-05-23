@@ -1,0 +1,87 @@
+<!-- <div class="jumbotron">
+    <div class="container">
+        <p class="masthead-button-links">
+            <a class="btn btn-lg btn-primary btn-shadow" href="https://v3.bootcss.com/" target="_blank" role="button"
+                onclick="_hmt.push(['_trackEvent', 'masthead', 'click', 'masthead-Bootstrap3中文文档'])">Bootstrap3中文文档(v3.3.7)</a>
+        </p>
+    </div>
+</div> -->
+<h3>product detail</h3>
+<div class="container iWrap">
+    <div class="swiper-wraper width:50%">
+        <div class="swiper-container gallery-top">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img
+                        src="https://img.alicdn.com/imgextra/i4/713805254/O1CN01u8jB1g1ogNWXlcBpm_!!713805254.jpg_430x430q90.jpg" />
+                </div>
+                <div class="swiper-slide"><img
+                        src="//img.alicdn.com/imgextra/i3/1776456424/O1CN011ohv0D1xKEv232WxY_!!1776456424.jpg_430x430q90.jpg" />
+                </div>
+            </div>
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+        <div class="swiper-container gallery-thumbs">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img
+                        src="https://img.alicdn.com/imgextra/i4/713805254/O1CN01u8jB1g1ogNWXlcBpm_!!713805254.jpg_60x60q90.jpg" />
+                </div>
+                <div class="swiper-slide"><img
+                        src="//img.alicdn.com/imgextra/i3/1776456424/O1CN011ohv0D1xKEv232WxY_!!1776456424.jpg_60x60q90.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="width:40%">
+        <!-- <form> -->
+        <!-- <div class="form-group">
+              <label for="exampleInputName2">Name</label>
+              <input type="text"  id="exampleInputName2" placeholder="Jane Doe">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail2">Email</label>
+              <input type="email" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+            </div> -->
+        <div class="form-group container tt-body">
+            <tbody>
+                <tr>
+                    <!-- <td ng-bind="product.title">{{products.title}}</td> -->
+                    <h3>Name:{{products.title}}</h3>
+
+                </tr>
+                <tr>
+                    <h3>Price:{{products.price}}</h3>
+                </tr>
+                <tr>
+                    <h3>Size:{{products.size}}</h3>
+                </tr>
+                <!-- <tr class="row">
+                    <h3> Qty:</h3>
+                    <td class="row left-margin">
+                        <button type="button" ng-click="reduce(item.id)" class="btn btn-primary btn-sm">-</button>
+                        <input type="text" ng-model="item.quantity" style="text-align: center;" class="qty-input"
+                            value='1'>
+                        <button type="button" ng-click="add(item.id)" class="btn btn-primary btn-sm">+</button>
+                    </td>
+                </tr> -->
+                <tr class="row">
+                    <h3> Qty:</h3>
+                    <input id="min" name="" type="button" value="-" />
+                    <input id="quantity" name="" class="qty-input" type="text" value="1" />
+                    <input id="add" name="" type="button" value="+" />
+                </tr>
+            </tbody>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">Add to chart</button>
+        <!-- </form> -->
+    </div>
+
+</div>
+
+
+<div class="container width:100%">
+    <div class="width:100%">
+        <h3>{{products.desc}}</h3>
+    </div>
+</div>

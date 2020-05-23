@@ -1,0 +1,22 @@
+<h3>Order History</h3>
+<div class="container iWrap">
+  <div class="imgDiv row" *ngFor="let item of orderItem">
+    <div class="col-md-2">
+      <img class="chart-img" [src]="item.pic">
+    </div>
+    <div class="col-md-10">
+      <ul class="ul-li-title width:100%">
+        <li>{{item.title}}</li>
+      </ul>
+      <ul class="ul-li width:100%">
+        <li class="table-item">price:{{item.price}}</li>
+        <li class="table-item">sum:{{item.sum}}</li>
+        <li class="table-item">total:${{item.price*item.sum}}</li>
+        <li class="table-item">date:{{item.updateDate}}</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+  <form class="form-inline my-2 my-lg-0 main-search" #myForm="ngForm" (ngSubmit)="searchByFiler(myForm.value)">
+    <div class="search">
+      <label>min price:</label>
+    <input class="" ngModel name="minPrice" type="text" placeholder="Search" aria-label="Search">
+    <label>max price:</label>
+    <input class="" ngModel name="maxPrice" type="text" placeholder="Search" aria-label="Search">
+    <div>
+      <nz-select nzPlaceHolder="company" class="wide" [(ngModel)]="defaultValue" (ngModelChange)="dataChange()">
+        <nz-option *ngFor="let data of datas" [nzLabel]="data.name"
+                   [nzValue]="data"></nz-option>
+         </nz-select>
+    </div>
+    <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+  </div>
+  </form>
+</div>

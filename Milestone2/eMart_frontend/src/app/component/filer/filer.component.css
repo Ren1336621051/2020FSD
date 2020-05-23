@@ -1,0 +1,12 @@
+.main-search{
+    height:100px;
+    text-align:center;
+    margin:0px auto;
+}
+.search{
+    text-align:center; 
+    margin:0px auto;
+}
+.searchInput{
+    width: 380px;
+}

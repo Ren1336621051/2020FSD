@@ -1,0 +1,74 @@
+<h3 class="title col-sm-12 offset-sm-3">Add Product</h3>
+<form id="myForm" class="col-sm-6 offset-sm-3 col-12" action="localhost:8080/user" method="get">
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Title</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="title" type="text" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Category</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="category" type="text" list="category"/>
+            <datalist id="category">
+              <option value="">Electric</option>
+            </datalist>
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Subcategory</label>
+        <div class="col-10">
+          <input class="form-control col-10" name="subcategory" type="text" list="subcategory"/>
+          <datalist id="subcategory">
+            <option value="">Phone</option>
+            <option value="">Computer</option>
+          </datalist>
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Price</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="price" type="text" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Qty</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="qty" type="number" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Desc</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="desc" type="text" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">StockNo</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="stock" type="text" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Img1</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="img1" type="text" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Img2</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="img2" type="text" />
+        </div>
+    </div>
+    <div class="form-group form-row">
+        <label class="col-form-label col-2">Img3</label>
+        <div class="col-10">
+            <input class="form-control col-10" name="img3" type="text" />
+        </div>
+    </div>
+
+    <div class="form-group form-row operate">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>

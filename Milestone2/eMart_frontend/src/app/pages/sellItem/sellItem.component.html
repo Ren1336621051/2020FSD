@@ -1,0 +1,39 @@
+<h3 *ngIf="!soldFlg">Selling Items</h3>
+<h3 *ngIf="soldFlg">Sold Items</h3>
+<div class="container iWrap" *ngIf="!soldFlg">
+  <div class="imgDiv row" *ngFor="let item of sellItem">
+    <div class="col-md-2">
+      <img class="chart-img" [src]="item.pic">
+    </div>
+    <div class="col-md-10">
+      <ul class="ul-li-title width:100%">
+        <li>{{item.title}}</li>
+      </ul>
+      <ul class="ul-li width:100%">
+        <li class="table-item">price:{{item.price}}</li>
+        <li class="table-item">sum:{{item.sum}}</li>
+        <li class="table-item">date:{{item.updateDate}}</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="container iWrap" *ngIf="soldFlg">
+  <div class="imgDiv row" *ngFor="let item of sellItem">
+    <div class="col-md-2">
+      <img class="chart-img" [src]="item.pic">
+    </div>
+    <div class="col-md-10">
+      <ul class="ul-li-title width:100%">
+        <li>{{item.title}}</li>
+      </ul>
+      <ul class="ul-li width:100%">
+        <li class="table-item">price:{{item.price}}</li>
+        <li class="table-item">sum:{{item.sum}}</li>
+        <li class="table-item">date:{{item.updateDate}}</li>
+        <li class="table-item">buyer:{{item.buyer}}</li>
+        <li class="table-item">transactionNo:{{item.transactionNo}}</li>
+      </ul>
+    </div>
+  </div>

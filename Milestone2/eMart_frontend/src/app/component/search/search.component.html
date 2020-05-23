@@ -1,0 +1,22 @@
+<div class="container">
+  <form class="form-inline my-2 my-lg-0 main-search" #myForm="ngForm" (ngSubmit)="searchByName(myForm.value)">
+    <div class="search">
+      <input class="form-control required searchInput" ngModel name="productName" type="text" placeholder="Search"
+        aria-label="Search">
+      <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+    </div>
+  </form>
+</div>
+<div class="filer-div">
+  <form class="form-inline filer-form" #myForm="ngForm" (ngSubmit)="searchByFiler(myForm.value)">
+    <div class="row blank">
+      <label class="filer-label">min price:</label>
+      <input class="filer-input" ngModel name="minPrice" type="text" placeholder="MinPrice" aria-label="Search">
+      <label class="filer-label">max price:</label>
+      <input class="filer-input" ngModel name="maxPrice" type="text" placeholder="MaxPrice" aria-label="Search">
+      <label class="filer-label">company:</label>
+      <input class="filer-input" ngModel name="company" type="text" placeholder="Company" aria-label="Search">
+      <button class="btn btn-dark btn-sm" style="width: auto;height:24px;" type="submit">Confirm</button>
+    </div>
+  </form>
+</div>
