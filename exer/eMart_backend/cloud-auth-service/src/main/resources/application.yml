@@ -25,9 +25,18 @@ spring:
          
 eureka:
    instance:
-      preferIpAddress: true		#注册服务的IP，而不是服务器的名称
+      preferIpAddress: true
       client: 
-         registerWithEureka: true	#向Eureka注册服务
-         fetchRegistry: true		#拉取注册表的本副本
+         registerWithEureka: true
+         fetchRegistry: true
          serviceUrl: 
             defaultZone: http://localhost:8761/eureka/
+
+feign:
+   hystrix.enabled = true
+   compression.response.enabled = true
+   compression.request.mime-types[0] = text/xml
+   compression.request.mime-types[1] = application/xml
+   compression.request.mime-types[2] = application/json
+   compression.request.min-request-size = 2048
+  

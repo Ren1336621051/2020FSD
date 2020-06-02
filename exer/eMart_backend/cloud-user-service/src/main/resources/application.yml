@@ -28,10 +28,3 @@ eureka:
          fetchRegistry: true		#拉取注册表的本副本
          serviceUrl: 
             defaultZone: http://localhost:8761/eureka/
-#安全配置
-security:
-   oauth2:
-      resource:
-         id: user-service
-         user-info-uri: https://localhost:8901/auth/user
-         prefer-token-info: false

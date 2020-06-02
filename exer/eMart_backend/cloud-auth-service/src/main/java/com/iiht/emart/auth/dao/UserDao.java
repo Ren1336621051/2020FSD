@@ -1,4 +1,4 @@
-package com.iiht.emart.auth.repository;
+package com.iiht.emart.auth.dao;
 
 import javax.transaction.Transactional;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.iiht.emart.auth.entity.UserEntity;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Integer>{
+public interface UserDao extends JpaRepository<UserEntity, Integer>{
 	
 	public UserEntity findById(Integer id);
 	
