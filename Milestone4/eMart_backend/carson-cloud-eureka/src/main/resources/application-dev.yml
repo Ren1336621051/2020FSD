@@ -8,4 +8,4 @@ eureka:
       defaultZone: http://127.0.0.1:8761/eureka/
   server:
     enable-self-preservation: false #关闭自我保护
-    eviction-interval-timer-in-ms: 3000 #检查失效服务的时间
+    eviction-interval-timer-in-ms: 300000 #检查失效服务的时间

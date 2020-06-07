@@ -16,16 +16,16 @@
       <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li> -->
-      <li class="nav-item dropdown"><!--  *ngIf="buyerflg"{{username}} -->
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">buyer</a>
+      <li class="nav-item dropdown" *ngIf="buyerflg"><!--  *ngIf="buyerflg"{{username}} -->
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{this.username}}</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="/chart">Chart</a>
           <a class="dropdown-item" href="/userInformation">Information</a>
           <a class="dropdown-item" href="/order">History</a>
         </div>
       </li>
-      <li class="nav-item dropdown"><!--  *ngIf="!buyerflg"{{username}} -->
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">seller</a>
+      <li class="nav-item dropdown" *ngIf="!buyerflg"><!--  *ngIf="!buyerflg"{{username}} -->
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{this.username}}</a>
         <div class="dropdown-menu" aria-labelledby="dropdown02">
           <a class="dropdown-item" href="/userInformation">Information</a>
           <a class="dropdown-item" href="/addProduct">Add Product</a>

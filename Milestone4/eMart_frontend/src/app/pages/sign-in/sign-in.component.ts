@@ -36,15 +36,15 @@ export class SignInComponent implements OnInit {
         data => {
           console.log(JSON.stringify(data));
           const info: any = data;
-          if (200 === info.code) {
+          if (0 === info.code) {
               console.log('登录成功，调转详情页');
-              sessionStorage.setItem('token', info.result.token)
+              sessionStorage.setItem('token', info.data.token)
               //navbar user information
-              sessionStorage.setItem('userkind', info.result.userkind)
-              sessionStorage.setItem('username', info.result.username)
+              sessionStorage.setItem('userkind', info.data.userType)
+              sessionStorage.setItem('username', info.data.userName)
               this.router.navigate(['/products']);
           } else {
-            console.log('登录失败，弹出MSG');
+            console.log('登录失败，弹出MSG'+info.code);
             this.alerts.push({type : 'danger', message: 'username or password error!'});
 
           }
@@ -56,7 +56,7 @@ export class SignInComponent implements OnInit {
   validInput(value: any): boolean {
     this.reset();
     let result = true
-    if (!value.name) {
+    if (!value.userName) {
       this.alerts.push({type : 'danger', message: 'username required!'});
       result = false;
     }

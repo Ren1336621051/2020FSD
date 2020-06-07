@@ -19,7 +19,7 @@ export class UserService {
   }
 
   postSignIn(user) {
-    return this.http.post(`${environment.baseUrl}/login`, JSON.stringify(user), httpOptions);
+    return this.http.post(`${environment.baseUrl}/business/login/loginByPassword`, JSON.stringify(user), httpOptions);
   }
 
 }

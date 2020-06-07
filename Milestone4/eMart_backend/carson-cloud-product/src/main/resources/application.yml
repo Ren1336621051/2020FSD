@@ -24,3 +24,11 @@ logging:
     path: /log/${spring.application.name}
   level:
     root: info
+eureka:
+   instance:
+      preferIpAddress: true		#注册服务的IP，而不是服务器的名称
+      client: 
+         registerWithEureka: true	#向Eureka注册服务
+         fetchRegistry: true		#拉取注册表的本副本
+         serviceUrl: 
+            defaultZone: http://localhost:8761/eureka/    

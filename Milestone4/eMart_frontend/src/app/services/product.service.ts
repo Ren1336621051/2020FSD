@@ -14,11 +14,11 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   allProducts() {
-    return this.http.get(`${environment.baseUrl}/products`, httpOptions);
+    return this.http.get(`${environment.baseUrl}/product/product`, httpOptions);
   }
 
   searchByName(name){
-    return this.http.get(`${environment.baseUrl}/products?name=`+name, httpOptions);
+    return this.http.get(`${environment.baseUrl}/product/product?itemName=`+name, httpOptions);
   }
 
 }

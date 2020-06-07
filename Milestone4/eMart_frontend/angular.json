@@ -25,14 +25,14 @@
             ],
             "styles": [
               "src/styles.css",
-              "../angular-demo-router/node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "../angular-demo-router/node_modules/swiper/css/swiper.min.css"
+              "../eMart_frontend/node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../eMart_frontend/node_modules/swiper/css/swiper.min.css"
             ],
             "scripts": [
-              "../angular-demo-router/node_modules/jquery/dist/jquery.js",
-              "../angular-demo-router/node_modules/popper.js/dist/umd/popper.min.js",
-              "../angular-demo-router/node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "../angular-demo-router/node_modules/swiper/js/swiper.min.js"
+              "../eMart_frontend/node_modules/jquery/dist/jquery.js",
+              "../eMart_frontend/node_modules/popper.js/dist/umd/popper.min.js",
+              "../eMart_frontend/node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "../eMart_frontend/node_modules/swiper/js/swiper.min.js"
             ]
           },
           "configurations": {

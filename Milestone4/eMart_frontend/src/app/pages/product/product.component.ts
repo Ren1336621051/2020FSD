@@ -1,14 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {ProductService} from '../../services/product.service';
 
-interface ProductItem {
-  id: string;
-  price: number
-  title: string;
-  desc: string;
-  pic: string;
-}
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -17,13 +9,22 @@ interface ProductItem {
 export class ProductComponent implements OnInit {
 
   @ViewChild('searchResult') searchResult:any;
-  public products: ProductItem[];
+  public products:any;
   constructor(private productService: ProductService) { }
 
 
   ngOnInit(): void {
     this.getDataFromChild();
-    this.productService.allProducts();
+    // this.productService.allProducts();
+    this.allItems();
+  }
+  allItems(){
+    this.productService.allProducts().subscribe(
+      data => {
+        const info: any = data;
+        this.products = info.data
+      }
+    )
   }
   getDataFromChild(){
     // alert('ssssss')

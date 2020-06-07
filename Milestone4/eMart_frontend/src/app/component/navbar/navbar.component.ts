@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit, DoCheck {
       this.buyerflg = false;
     }
     this.username = sessionStorage.getItem('username');
+    console.log(this.username);
   }
 
   ngDoCheck(): void {
