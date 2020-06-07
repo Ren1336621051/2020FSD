@@ -55,6 +55,12 @@ public class AuthorizationServer extends AuthorizationServerConfigurerAdapter {
 //                .authorities("WRIGTH_READ", "WRIGTH_WRITE")
                 .authorizedGrantTypes("implicit", "refresh_token", "password", "authorization_code");
     }
+    
+    @Bean
+    public TokenEnhancer tokenEnhancer() {
+       return new CustomTokenEnhancer();
+    }
+    
     public AuthorizationServerTokenServices tokenService() { 
     	DefaultTokenServices service = new DefaultTokenServices();
     	service.setClientDetailsService(clientDetailsService);
@@ -62,7 +68,7 @@ public class AuthorizationServer extends AuthorizationServerConfigurerAdapter {
     	service.setTokenStore(tokenStore);
     	
     	TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-    	tokenEnhancerChain.setTokenEnhancers(Arrays.asList(accessTokenConverter));
+    	tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer(),accessTokenConverter));
     	service.setTokenEnhancer(tokenEnhancerChain);
     	
     	service.setAccessTokenValiditySeconds(7200);
