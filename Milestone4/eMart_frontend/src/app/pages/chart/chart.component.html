@@ -1,0 +1,45 @@
+<div class="container iWrap">
+
+  <div class="imgDiv row" *ngFor="let item of chartItems">
+    <div class="col-md-2">
+      <img class="chart-img" [src]="item.pic">
+    </div>
+    <div class="col-md-10">
+      <ul class="ul-li-title width:100%">
+        <li>{{item.title}}</li>
+      </ul>
+      <ul class="ul-li width:100%">
+        <li class="table-item">price:{{item.price}}</li>
+        <li class="table-item">sum:{{item.sum}}</li>
+        <li class="table-item">total:${{item.price*item.sum}}</li>
+        <button class="btn btn-sm btn-primary btn-dark text-align:left" type="submit">Delete</button>
+      </ul>
+    </div>
+    <!-- <div>
+      <button class="btn btn-sm btn-primary btn-dark" type="submit">Sign in</button>
+    </div> -->
+  </div>
+
+
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="chart-ul">
+        <li>Total Tax:</li>
+        <li>Total Price:</li>
+      </ul>
+    </div>
+    <div class="col-md-6 chart-submit">
+      <form class="row">
+      <p>Dismount:</p><input class="">
+      <button class="btn btn-sm btn-primary btn-dark" type="submit">Submit</button>
+    </form>
+    </div>
+    <div class="col-md-3">
+    <button class="btn btn-sm btn-primary btn-dark chart-submit" type="submit" [routerLink]="['/checkout']">Check Out</button>
+  </div>
+  </div>
+</div>

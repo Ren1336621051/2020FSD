@@ -1,0 +1,36 @@
+<h3>Check Out</h3>
+<div class="payDetail">
+  <h5>Transcation No.:t0001</h5>
+  <h3>Total Price:$34567</h3>
+</div>
+<div class="row">
+  <div class="address">
+    <h3 class="label">Shipping Address</h3>
+    <div class="choose">
+      <div class="radio detail" *ngFor='let item of address'>
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+          <div><h6>{{item.recipient}}</h6>{{item.address}}</div>
+        </label>
+      </div>
+      <!-- <div class="radio detail">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          <div><h6>Scofield</h6>1 Sotokanda, Chiyoda-ku, Tokyo, Japan</div>
+        </label>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="address">
+    <h3 class="label">Payment Method</h3>
+    <div class="choose">
+      <div class="radio detail"  *ngFor='let item of payment'>
+        <label>
+          <input type="radio" name="optionsRadios1" id="optionsRadios3" value="option1">
+          <div><h6>{{item.method}}</h6>{{item.cardNo}}</div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

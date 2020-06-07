@@ -1,0 +1,34 @@
+.main-search{
+    height:100px;
+    text-align:center;
+    margin:0px auto;
+}
+.search{
+    text-align:center; 
+    margin:0px auto;
+}
+.searchInput{
+    width: 380px;
+}
+.filer-div{
+    width: 100%;
+    height: 32px;
+    background-color: #616060;
+    border-top: 2px solid #0c0b0b;
+    border-bottom: 2px solid #0c0b0b;
+}
+.filer-input{
+    width: 75px;
+    height: 24px;
+}
+.filer-label{
+    width: 80px;
+    height: 24px;
+}
+.filer-form{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.blank{
+    margin: auto;
+}

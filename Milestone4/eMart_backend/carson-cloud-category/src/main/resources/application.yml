@@ -1,0 +1,26 @@
+server:
+  port: ${SERVICE_PORT:8085}
+spring:
+  application:
+    name: carson-cloud-category
+  profiles:
+    active: ${SPRING_PROFILE:dev}
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  datasource:
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://127.0.0.1:3306/category?useUnicode=true&characterEncoding=utf-8&useSSL=false
+     username: root
+     password: adminbp
+  jpa:
+     hibernate:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        ddl-auto: update
+        show-sql: true
+logging:
+  file:
+    name: ${logging.file.path}/application.log
+    path: /log/${spring.application.name}
+  level:
+    root: info

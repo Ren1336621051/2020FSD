@@ -1,0 +1,75 @@
+.iWrap {
+    /* position: absolute; */
+    background-color: #fff;
+    /* margin: 0; */
+    /* padding: 4px 4px 0; */
+    /* font-size: 0; */
+    border: 2px solid #0c0b0b;
+    border-radius: 3px;
+    
+    width: 100%;
+    height: 600px;
+}
+/* .tb-gallery {
+    margin-left: -100%;
+    float: left;
+    width: 460px;
+    position: relative;
+}
+
+
+.gallery-top {
+    height: 80%;
+    width: 100%;
+}
+.gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    display: none;
+} */
+
+.swiper-wraper {
+    margin: 0 auto;
+    /* margin-left: -100%; */
+    float: left;
+    width: 460px;
+    position: relative;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+.gallery-top {
+    height: 80%;
+    width: 100%;
+}
+.gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+}
+.gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+p-parameter-list {
+    padding: 20px 0 15px;
+}
+.tt-body{
+    margin-top: 33px;
+    margin-left: 50px;
+}
+.qty-input{
+    width:50px;
+}
+.left-margin{
+    margin-left: 30px;
+}

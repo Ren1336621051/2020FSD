@@ -1,0 +1,46 @@
+server:
+  port: ${SERVICE_PORT:8040}
+spring:
+  application:
+    name: carson-cloud-gateway
+  profiles:
+    active: ${SPRING_PROFILE:dev}
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+logging:
+  file:
+    name: ${logging.file.path}/application.log
+    path: /log/${spring.application.name}
+  level:
+    root: info
+
+zuul:
+  ribbonIsolationStrategy: thread
+  threadPool:
+    thread-pool-key-prefix: zuulgw
+    use-separate-thread-pools: true
+  routes:
+    business:
+      path: /business/**
+      service-id: carson-cloud-business
+    product:
+      path: /product/**
+      service-id: carson-cloud-product
+    order:
+      path: /order/**
+      service-id: carson-cloud-order
+    category:
+      path: /category/**
+      service-id: carson-cloud-category
+    address:
+      path: /address/**
+      service-id: carson-cloud-address
+
+data-filter:
+  auth-path: #需要验证token的请求地址,可设置多个,会触发JwtAuthPreFilter
+    - /business/data/**
+    - /product/**
+    - /business/report/**
+  user-login-path: #登录请求地址,可设置多个,会触发LoginAddJwtPostFilter
+    - /business/login/**
