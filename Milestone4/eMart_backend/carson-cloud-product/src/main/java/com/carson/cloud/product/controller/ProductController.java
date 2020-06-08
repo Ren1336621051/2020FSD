@@ -2,6 +2,9 @@ package com.carson.cloud.product.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,8 +45,8 @@ public class ProductController {
 	
 	//ok
 	@GetMapping("/getItemByName")
-	public ResponseEntity<ProductEntity> getItemByName(String itemName){
-		ProductEntity item = productService.getItemByName(itemName);
+	public ResponseEntity<List<ProductEntity>> getItemByName(String itemName){
+		List<ProductEntity> item = productService.getItemByName(itemName);
 		return ResponseEntity.ok(item); 
 	}
 	

@@ -37,7 +37,7 @@ public interface ProductDao extends JpaRepository<ProductEntity, Integer>{
 
 	@Transactional
 	@Query(value = "select * from product.s_product p where p.title=?",nativeQuery = true)
-	public ProductEntity getItemByName(String itemName);
+	public List<ProductEntity> getItemByName(String itemName);
 
 //	@Transactional
 //	@Query(value = "insert into s_order (id,buyer_id,seller_id,item_id,qty,transaction_type,crtDate)"

@@ -1,9 +1,8 @@
 export class Product {
   id: string;
   title: string;
-  categoryId: string;
-  subcategoryId: string;
-  seller: string;
+  category: string;
+  subcategory: string;
   price: string;
   qty:number;
   desc: string;
@@ -11,10 +10,12 @@ export class Product {
   imgUrl1: string;
   imgUrl2: string;
   imgUrl3: string;
-  status: string;
-  buyer: string;
-  updateDate: string;
-  transactionNo: string
+  seller: string;
+  crtDate: string;
+  // status: string;
+  // buyer: string;
+  // updateDate: string;
+  // transactionNo: string
 }
 export class Category {
   categoryId: string;

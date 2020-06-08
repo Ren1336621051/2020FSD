@@ -38,7 +38,7 @@ public class LoginController {
             result.setData(user);
         }else {
             result.setData(null);
-        	result.setCode(1);
+        	result.setCode(510);
         }
         return result;
     }

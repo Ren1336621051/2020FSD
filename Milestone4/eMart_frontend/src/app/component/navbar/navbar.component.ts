@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit, DoCheck {
       this.isSignin = false;
     }
     //
-    if (sessionStorage.getItem('userkind')){
+    if (sessionStorage.getItem('userkind')=='buyer'){
       this.buyerflg = true;
     } else {
       this.buyerflg = false;

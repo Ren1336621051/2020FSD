@@ -14,24 +14,25 @@ export class ProductComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getDataFromChild();
+    // this.getDataFromChild();
     // this.productService.allProducts();
     this.allItems();
+  }
+  // getDataFromChild(){
+  //   // alert('ssssss')
+  //   this.products=this.searchResult.products;
+  //   console.log(this.products);
+  // }
+  onCal(result:any){
+    // this.getDataFromChild();
+    this.products=this.searchResult.products;
   }
   allItems(){
     this.productService.allProducts().subscribe(
       data => {
-        const info: any = data;
-        this.products = info.data
+        // const info: any = data;
+        this.products = data
       }
     )
-  }
-  getDataFromChild(){
-    // alert('ssssss')
-    this.products=this.searchResult.products;
-    console.log(this.searchResult.products)
-  }
-  onCal(result:string){
-    this.getDataFromChild();
   }
 }

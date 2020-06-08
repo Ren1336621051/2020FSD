@@ -1,21 +1,20 @@
 <app-search #searchResult (result)="onCal($event)"></app-search>
-<!-- <app-search></app-search> -->
 <div class="container">
   <!-- <form><button  type="submit" (click)="getDataFromChild()">sss</button></form> -->
 <div class="row">
-    <!-- <div *ngFor="let product of products" class="col-md-3 col-sm-3 col-lg-3 div-product">
+    <div *ngFor="let product of products" class="col-md-3 col-sm-3 col-lg-3 div-product">
       <div class="thumbnail pruduct-iWrap">
          <div class="productImg-wrap">
-          <img [src]="product.pic">
+          <img [src]="product.imgUrl1" width="210" height="210">
          </div>
          <div class="caption">
-          <h5 class="pull-right">{{product.price | money:3}}元</h5>
+          <h5 class="pull-right">{{product.price | currency:'$'}}</h5>
           <h5><a [routerLink]="['/product',product.id]">{{product.title}}</a></h5>
           <h6><p>{{product.desc}}</p></h6>
          </div>
       </div>
-    </div> -->
-    <div *ngFor="let product of products" class="col-sm-6 col-md-4 col-lg-3 ">
+    </div>
+    <!-- <div *ngFor="let product of products" class="col-sm-6 col-md-4 col-lg-3 ">
       <div class="thumbnail divw-product">
         <a href="https://www.webpackjs.com/" title="Webpack " target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'webpack'])">
           <img class="lazy imgw-product" [src]="product.pic" width="210" height="210" alt="Webpack">
@@ -26,5 +25,5 @@
           <p>{{product.desc}}</p>
         </div>
       </div>
-    </div>
+    </div> -->
 </div></div>

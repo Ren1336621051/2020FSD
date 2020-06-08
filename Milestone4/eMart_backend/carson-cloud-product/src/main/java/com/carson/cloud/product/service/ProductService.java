@@ -64,5 +64,5 @@ public interface ProductService {
 	 */
 	public List<ProductEntity> getItemsBySeller(Integer id);
 
-	public ProductEntity getItemByName(String itemName);
+	public List<ProductEntity> getItemByName(String itemName);
 }

@@ -35,7 +35,7 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	@Override
-	public ProductEntity getItemByName(String itemName) {
+	public List<ProductEntity> getItemByName(String itemName) {
 		// TODO Auto-generated method stub
 		return productDao.getItemByName(itemName);
 	}

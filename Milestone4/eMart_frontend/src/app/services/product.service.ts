@@ -18,7 +18,8 @@ export class ProductService {
   }
 
   searchByName(name){
-    return this.http.get(`${environment.baseUrl}/product/product?itemName=`+name, httpOptions);
+    console.log("ssssss"+name);
+    return this.http.get(`${environment.baseUrl}/product/product/getItemByName?itemName=`+name, httpOptions);
   }
 
 }

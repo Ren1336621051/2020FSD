@@ -21,12 +21,12 @@ zuul:
     thread-pool-key-prefix: zuulgw
     use-separate-thread-pools: true
   routes:
-    business:
-      path: /business/**
-      service-id: carson-cloud-business
     product:
       path: /product/**
       service-id: carson-cloud-product
+    business:
+      path: /business/**
+      service-id: carson-cloud-business
     order:
       path: /order/**
       service-id: carson-cloud-order
@@ -40,7 +40,6 @@ zuul:
 data-filter:
   auth-path: #需要验证token的请求地址,可设置多个,会触发JwtAuthPreFilter
     - /business/data/**
-    - /product/**
     - /business/report/**
   user-login-path: #登录请求地址,可设置多个,会触发LoginAddJwtPostFilter
     - /business/login/**

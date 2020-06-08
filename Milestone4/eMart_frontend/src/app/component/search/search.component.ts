@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product';
 
 interface ProductItem {
   id: string;
@@ -48,28 +49,49 @@ const PRODUCTS: ProductItem[] = [{
 })
 export class SearchComponent implements OnInit {
 
-  public products: ProductItem[];
+  // public products: ProductItem[];
+  public products:any;  
+  public searchName:any;
 
-  @Output() result = new EventEmitter<string>();
+  @Output() result = new EventEmitter<any>();
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     // this.products = PRODUCTS;
     // console.log(this.products);
-    this.searchByName(null);
+    // this.searchByName(null);
+    if(this.searchName=null){
+      this.allItems()
+    }else{
+      this.searchByName(this.searchName)
+    }
+    // this.allItems();
     // this.result.emit('search');
   }
 
-  searchByName(value: any) {
-    this.productService.searchByName(value).subscribe(data => {
+  searchByName(value: string) {
+    var itemName = JSON.parse(JSON.stringify(value));
+    this.productService.searchByName(itemName.searchName).subscribe(data => {
       console.log(JSON.stringify(data));
+      this.products = data;
     })
 
-    this.products = PRODUCTS;
+    // this.products = PRODUCTS;
 
-    this.result.emit('search');
+    // this.result.emit('search');
+    this.result.emit(this.products);
 
+  }
+  allItems(){
+    this.productService.allProducts().subscribe(
+      data => {
+        // const info: any = data;
+        this.products = data
+      }
+    )
+    // this.result.emit('search');
+    this.result.emit(this.products);
   }
   searchByFiler(value:any){
 
