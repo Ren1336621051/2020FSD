@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Route} from '@angular/router';
+import {ProductService} from '../../services/product.service';
 import Swiper from 'swiper';
 import * as $ from 'jquery';
 
-interface ProductItem1 {
-  id: string;
-  price: number
-  title: string;
-  desc: string;
-  pic: string;
-  size: string;
-}
-const PRODUCTS: ProductItem1[] = [{
-  id: '1',
-  price: 3299,
-  title: 'iphone se',
-  desc: 'iPhone SE packs A13 Bionic, Portrait mode, 4K video, Touch ID, a Retina HD display, and great battery life into a 4.7” design',
-  pic: 'https://img.alicdn.com/imgextra/i4/713805254/O1CN01u8jB1g1ogNWXlcBpm_!!713805254.jpg_430x430q90.jpg',
-  size:'red 128G'
-}];
+// interface ProductItem1 {
+//   id: string;
+//   price: number
+//   title: string;
+//   desc: string;
+//   pic: string;
+//   size: string;
+// }
+// const PRODUCTS: ProductItem1[] = [{
+//   id: '1',
+//   price: 3299,
+//   title: 'iphone se',
+//   desc: 'iPhone SE packs A13 Bionic, Portrait mode, 4K video, Touch ID, a Retina HD display, and great battery life into a 4.7” design',
+//   pic: 'https://img.alicdn.com/imgextra/i4/713805254/O1CN01u8jB1g1ogNWXlcBpm_!!713805254.jpg_430x430q90.jpg',
+//   size:'red 128G'
+// }];
 
 @Component({
   selector: 'app-product-detail',
@@ -28,23 +29,30 @@ const PRODUCTS: ProductItem1[] = [{
 export class ProductDetailComponent implements OnInit {
   title = 'swiper01';
 
-  constructor(private routeInfo: ActivatedRoute) { }
-  public products:any={
-    id: '1',
-    price: 3299,
-    title: 'iphone se',
-    desc: 'iPhone SE packs A13 Bionic, Portrait mode, 4K video, Touch ID, a Retina HD display, and great battery life into a 4.7” design',
-    pic: 'https://img.alicdn.com/imgextra/i4/713805254/O1CN01u8jB1g1ogNWXlcBpm_!!713805254.jpg_430x430q90.jpg',
-    size:'red 128G'
-  }
-  name: string
+  constructor(private routeInfo: ActivatedRoute,private productService: ProductService) { }
+  public products:any
+  // ={
+  //   id: '1',
+  //   price: 3299,
+  //   title: 'iphone se',
+  //   desc: 'iPhone SE packs A13 Bionic, Portrait mode, 4K video, Touch ID, a Retina HD display, and great battery life into a 4.7” design',
+  //   pic: 'https://img.alicdn.com/imgextra/i4/713805254/O1CN01u8jB1g1ogNWXlcBpm_!!713805254.jpg_430x430q90.jpg',
+  //   size:'red 128G'
+  // }
+  itemName: string
 
   ngOnInit(): void {
     // console.log(JSON.stringify(this.route));
     // this.products=PRODUCTS;
     console.log(this.products);
+    this.itemName = this.routeInfo.snapshot.params['title'];
 
-    this.name = this.routeInfo.snapshot.params['id'];
+    this.productService.searchByName(this.itemName).subscribe(
+      data => {
+        // const info: any = data;
+        this.products = data
+      });
+
     setTimeout(() => {
       this.initSwiper();
     }, 0);

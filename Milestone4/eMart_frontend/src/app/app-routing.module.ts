@@ -24,7 +24,7 @@ const routes: Routes = [
   // { path: 'products', component: ProductComponent, canActivate: [SigninGuard]},
   // { path: 'product/:id', component: ProductDetailComponent, canActivate: [SigninGuard]}
   { path: 'products', component: ProductComponent},
-  { path: 'product/:id', component: ProductDetailComponent},
+  { path: 'product/:title', component: ProductDetailComponent},
   { path: 'userInformation', component: UserInformationComponent},
   { path: 'order', component: OrderComponent},
   { path: 'sellItem', component: SellItemComponent},
