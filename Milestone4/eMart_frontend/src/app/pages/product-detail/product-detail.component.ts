@@ -27,31 +27,23 @@ import * as $ from 'jquery';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  title = 'swiper01';
+  // title = 'swiper01';
 
+  public products:any;
   constructor(private routeInfo: ActivatedRoute,private productService: ProductService) { }
-  public products:any
-  // ={
-  //   id: '1',
-  //   price: 3299,
-  //   title: 'iphone se',
-  //   desc: 'iPhone SE packs A13 Bionic, Portrait mode, 4K video, Touch ID, a Retina HD display, and great battery life into a 4.7” design',
-  //   pic: 'https://img.alicdn.com/imgextra/i4/713805254/O1CN01u8jB1g1ogNWXlcBpm_!!713805254.jpg_430x430q90.jpg',
-  //   size:'red 128G'
-  // }
-  itemName: string
+  public itemName:any;
 
   ngOnInit(): void {
-    // console.log(JSON.stringify(this.route));
-    // this.products=PRODUCTS;
-    console.log(this.products);
-    this.itemName = this.routeInfo.snapshot.params['title'];
-
-    this.productService.searchByName(this.itemName).subscribe(
+    this.itemName = this.routeInfo.snapshot.params["title"];
+    this.products = [];
+    console.log("itemName"+this.itemName);
+    this.productService.searchById(this.itemName).subscribe(
       data => {
-        // const info: any = data;
-        this.products = data
+        this.products = JSON.parse(JSON.stringify(data))
+        console.log("data"+JSON.stringify(data));
+        console.log("products"+this.products.title);
       });
+      
 
     setTimeout(() => {
       this.initSwiper();

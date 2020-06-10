@@ -30,6 +30,7 @@ public class ProductController {
 	 * 
 	 * @return
 	 */
+	//ok
 	@GetMapping
 	public List<ProductEntity> findAllItems(){
 		

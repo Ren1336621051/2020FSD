@@ -22,6 +22,11 @@ export class ProductService {
     return this.http.get(`${environment.baseUrl}/product/product/getItemByName?itemName=`+name, httpOptions);
   }
 
+  searchById(id){
+    console.log("ssssss"+id);
+    return this.http.get(`${environment.baseUrl}/product/product/getItemById?id=`+id, httpOptions);
+  }
+
 }
 
 
