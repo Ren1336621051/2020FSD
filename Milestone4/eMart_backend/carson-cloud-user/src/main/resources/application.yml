@@ -2,7 +2,7 @@ server:
   port: ${SERVICE_PORT:8083}
 spring:
   application:
-    name: carson-cloud-business
+    name: carson-cloud-user
   profiles:
     active: ${SPRING_PROFILE:dev}
   jackson:
