@@ -16,7 +16,7 @@
 	<modules>
 		<module>carson-cloud-eureka</module>
 		<module>carson-cloud-gateway</module>
-		<module>carson-cloud-business</module>
+		<module>carson-cloud-user</module>
 		<module>carson-cloud-product</module>
 		<module>carson-cloud-order</module>
     <module>carson-cloud-category</module>

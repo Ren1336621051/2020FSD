@@ -31,13 +31,13 @@ export class ProductDetailComponent implements OnInit {
 
   public products:any;
   constructor(private routeInfo: ActivatedRoute,private productService: ProductService) { }
-  public itemName:any;
+  public itemId:any;
 
   ngOnInit(): void {
-    this.itemName = this.routeInfo.snapshot.params["title"];
+    this.itemId = this.routeInfo.snapshot.params["id"];
     this.products = [];
-    console.log("itemName"+this.itemName);
-    this.productService.searchById(this.itemName).subscribe(
+    console.log("itemName"+this.itemId);
+    this.productService.searchById(this.itemId).subscribe(
       data => {
         this.products = JSON.parse(JSON.stringify(data))
         console.log("data"+JSON.stringify(data));
