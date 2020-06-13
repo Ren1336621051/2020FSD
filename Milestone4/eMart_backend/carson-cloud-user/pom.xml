@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.carson.cloud</groupId>
-	<artifactId>carson-cloud-business</artifactId>
+	<artifactId>carson-cloud-user</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>carson-cloud-business</name>
+	<name>carson-cloud-user</name>
 	<description>Demo project for Spring Boot Business</description>
 
 	<properties>
