@@ -22,4 +22,8 @@ export class UserService {
     return this.http.post(`${environment.baseUrl}/business/login/loginByPassword`, JSON.stringify(user), httpOptions);
   }
 
+  postSignUp(user) {
+    return this.http.post(`${environment.baseUrl}/business/regist/addUser`, JSON.stringify(user), httpOptions);
+  }
+
 }

@@ -1,35 +1,47 @@
 <h2 class="title col-sm-12 offset-sm-3">Sign up</h2>
-<form id="myForm" class="col-sm-6 offset-sm-3 col-12" action="localhost:8080/user" method="get">
+<!-- <form id="myForm" class="col-sm-6 offset-sm-3 col-12" action="localhost:8080/user" method="get"> -->
+<form class="col-sm-6 offset-sm-3 col-12" #myForm="ngForm" (ngSubmit)="onAdd(myForm.value)" novalidate>
+
+    <p *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+
     <div class="form-group form-row">
         <label class="col-form-label col-2">User Name</label>
         <div class="col-10">
-            <input class="form-control col-10" name="name" type="text" />
+            <input class="form-control col-10" ngModel name="userName" type="text" />
         </div>
     </div>
     <div class="form-group form-row">
         <label class="col-form-label col-2">Password</label>
         <div class="col-10">
-            <input class="form-control col-10" name="password" type="password" />
+            <input class="form-control col-10" ngModel name="password" type="password" />
         </div>
     </div>
     <div class="form-group form-row">
         <label class="col-form-label col-2">Email</label>
         <div class="col-10">
-            <input class="form-control col-10" name="email" type="text" />
+            <input class="form-control col-10" ngModel name="email" type="text" />
         </div>
     </div>
     <div class="form-group form-row">
         <label class="col-form-label col-2">Phone Number</label>
         <div class="col-10">
-            <input class="form-control col-10" name="cellphone" type="text" />
+            <input class="form-control col-10" ngModel name="mobileNum" type="text" />
         </div>
     </div>
-    <div class="form-group form-row">
+    <!-- <div class="form-group form-row">
+        <label class="col-form-label col-2">User Type</label>
+        <div class="col-10">
+            <input class="form-control col-10" ngModel name="userType" type="text" value="buyer"/>
+        </div>
+    </div> -->
+    <!-- <div class="form-group form-row">
         <label class="col-form-label col-2">Address</label>
         <div class="col-10">
-            <input class="form-control col-10" name="address" type="text" />
+            <input class="form-control col-10" ngModel name="address" type="text" />
         </div>
-    </div>
+    </div> -->
     <!--    定义bootstrap alert插件框    -->
     <div id="result" class="alert alert-danger">
 
@@ -37,5 +49,6 @@
     <div class="form-group form-row operate">
         <button class="btn btn-primary" type="submit">Submit</button>
         <button class="btn btn-primary" [routerLink]="['/sign-up-seller']">As a seller</button>
+        <!-- <input type="radio" name="userType" value="seller" [routerLink]="['/sign-up-seller']">As a seller -->
     </div>
 </form>
